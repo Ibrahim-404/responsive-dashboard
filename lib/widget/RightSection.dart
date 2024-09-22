@@ -1,0 +1,66 @@
+import 'package:flutter/material.dart';
+import 'package:responsive_dash_board/TextStyleInMyProject.dart';
+import 'package:responsive_dash_board/widget/IcomeSection.dart';
+import 'package:responsive_dash_board/widget/LoppingatCard.dart';
+import 'package:responsive_dash_board/widget/TransactionHistory.dart';
+import 'package:responsive_dash_board/widget/TransactionHistoryList.dart';
+import 'package:responsive_dash_board/widget/dotesIndicator.dart';
+class RightSection extends StatefulWidget {
+  RightSection({super.key});
+  @override
+  State<RightSection> createState() => _RightSectionState();
+}
+
+class _RightSectionState extends State<RightSection> {
+  int currentIndex = 0;
+  late PageController pageController;
+
+  @override
+  void initState() {
+    super.initState();
+    pageController = PageController();
+    pageController.addListener(() {
+      currentIndex = pageController.page!.round();
+      setState(() {});
+    });
+  }
+
+  @override
+  void dispose() {
+    pageController.dispose();
+    super.dispose();
+  }
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.only(right: 15, top: 10),
+      padding: EdgeInsets.all(24),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20),
+        color: Colors.white,
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text("MY CARD", style: AppStyle.styleSemiBold20),
+          const SizedBox(height: 20),
+          LoppingatCard(
+            pageControler: pageController,
+          ),
+          const SizedBox(height: 19),
+          GenerateDotes(
+            curentIndex: currentIndex,
+          ),
+          Divider(
+            height: 40,
+            color: Color(0xFFF1F1F1),
+          ),
+          TransactionHistory(),
+          SizedBox(height: 10),
+          // Your list and other elements will now scroll inside this section
+          LoopingForTransactionHistoryList(),
+        ],
+      ),
+    );
+  }
+}
