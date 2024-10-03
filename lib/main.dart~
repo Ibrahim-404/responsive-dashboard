@@ -15,8 +15,7 @@ class ResponiveAndAdptiveDashdoard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        locale: DevicePreview.locale(context),
-        builder: DevicePreview.appBuilder,
+
       theme: ThemeData(useMaterial3: true),
       debugShowCheckedModeBanner: false,
       home: MainScreen(),

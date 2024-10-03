@@ -16,7 +16,7 @@ class _TestsectionState extends State<Testsection> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // margin: EdgeInsets.only(right: 15),
+      margin: EdgeInsets.only(right: 15),
       padding: EdgeInsets.symmetric(horizontal: 10),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),

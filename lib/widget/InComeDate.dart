@@ -3,7 +3,6 @@ import 'package:responsive_dash_board/TextStyleInMyProject.dart';
 
 class IncomeDetails extends StatelessWidget {
   const IncomeDetails({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -40,12 +39,13 @@ class IncomeDetailsItem extends StatelessWidget {
       ),
       title: Text(
         title,
-        style: AppStyle.styleRegular16.copyWith(overflow: TextOverflow.ellipsis),
+        style:
+            AppStyle.styleRegular16(context).copyWith(overflow: TextOverflow.ellipsis),
       ),
       trailing: Text(
         "$percentage%",
-        style: AppStyle.styleMedium16.copyWith(
-          color: Color(0xFF208CC8),overflow: TextOverflow.ellipsis,
+        style: AppStyle.styleMedium16(context).copyWith(
+          color: Color(0xFF208CC8),
         ),
       ),
     );

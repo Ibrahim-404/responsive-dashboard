@@ -8,11 +8,9 @@ class SectionTitle extends StatefulWidget {
   SectionTitle({super.key, required this.title, this.ItemInDropDown});
   String title;
   List<String>? ItemInDropDown = [];
-
   @override
   State<SectionTitle> createState() => _MyWidgetState();
 }
-
 class _MyWidgetState extends State<SectionTitle> {
   // Initialize the dropdown value based on the first item in the list or a default value
   String DropdownValue = Divisionoftheyear.first;

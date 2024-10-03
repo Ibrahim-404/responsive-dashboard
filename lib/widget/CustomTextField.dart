@@ -39,7 +39,7 @@ class CustomTextField extends StatelessWidget {
       children: [
         Padding(
           padding: const EdgeInsets.only(left: 12),
-          child: Text(title, style: AppStyle.styleSemiBold16),
+          child: Text(title, style: AppStyle.styleSemiBold16(context)),
         ),
         IntrinsicHeight(
           child: TextField(
@@ -59,7 +59,7 @@ class CustomTextField extends StatelessWidget {
                 ),
               ),
 
-              hintStyle: AppStyle.styleRegular16
+              hintStyle: AppStyle.styleRegular16(context)
                   .copyWith(color: const Color(0xFFAAAAAA)),
               hintText: hint,
               // prefixIcon: Icon(Icons.search),
@@ -149,7 +149,7 @@ class CustomButton extends StatelessWidget {
           onPressed: () {},
           child: Text(
             'Send Money',
-            style: AppStyle.styleSemiBold18.copyWith(
+            style: AppStyle.styleSemiBold18(context).copyWith(
               color: Color(0xFFFFFFFF),
             ),
           ),
@@ -168,7 +168,7 @@ class AddMoreDetailsButton extends StatelessWidget {
           alignment: Alignment.center,
           child: Text(
             'Add more details',
-            style: AppStyle.styleSemiBold16.copyWith(color: Color(0xFF4EB7F2)),
+            style: AppStyle.styleSemiBold16(context).copyWith(color: Color(0xFF4EB7F2)),
           )),
     );
   }

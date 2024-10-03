@@ -18,7 +18,6 @@ ActiveBalanceCard({
 @override
 Widget build(BuildContext context) {
   return Container(
-    height: 200,
     // width: 150,
     decoration: BoxDecoration(
       color: Colors.blue,
@@ -42,15 +41,15 @@ Widget build(BuildContext context) {
         SizedBox(height: 34),
         Text(
           title,
-          style: AppStyle.styleSemiBold16.copyWith(color: Colors.white),
+          style: AppStyle.styleSemiBold16(context).copyWith(color: Colors.white),
         ),
         Text(
           subTitle,
-          style: AppStyle.styleRegular14.copyWith(color: Colors.white),
+          style: AppStyle.styleRegular14(context).copyWith(color: Colors.white),
         ),
         Text(
           "\$${money}",
-          style: AppStyle.styleSemiBold24.copyWith(color: Colors.white),
+          style: AppStyle.styleSemiBold24(context).copyWith(color: Colors.white),
         ),
       ],
     ),

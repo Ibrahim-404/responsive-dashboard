@@ -18,7 +18,7 @@ class ActiveItemInDrawer extends StatelessWidget {
       leading: icon,
       title: Text(
         name,
-        style: AppStyle.styleRegular16.copyWith(color: Colors.blue),
+        style: AppStyle.styleRegular16(context).copyWith(color: Colors.blue),
       ),
       trailing: Container(
         width: 3.7,

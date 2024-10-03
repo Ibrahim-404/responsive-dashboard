@@ -21,25 +21,25 @@ class TransactionHistoryList extends StatelessWidget {
       child: ListTile(
           title: Text(
             title,
-            style: AppStyle.styleSemiBold16
-                .copyWith(overflow: TextOverflow.ellipsis, fontSize: 12),
+            style: AppStyle.styleSemiBold16(context)
+                .copyWith(overflow: TextOverflow.ellipsis),
           ),
           subtitle: Text(
             subtitle,
-            style: AppStyle.styleMedium16.copyWith(
-                color: Color(0xFFAAAAAA),
-                overflow: TextOverflow.ellipsis,
-                fontSize: 12),
+            style: AppStyle.styleMedium16(context).copyWith(
+              color: Color(0xFFAAAAAA),
+              overflow: TextOverflow.ellipsis,
+            ),
           ),
           trailing: Text(
             Amount,
-            style: AppStyle.styleMedium20.copyWith(
-                color: isActive
-                    ? Color(0xFFF3735E)
-                    : Color(
-                        0xFF7DD97B,
-                      ),
-                fontSize: 12),
+            style: AppStyle.styleMedium20(context).copyWith(
+              color: isActive
+                  ? Color(0xFFF3735E)
+                  : Color(
+                      0xFF7DD97B,
+                    ),
+            ),
           )),
     );
   }
@@ -47,20 +47,17 @@ class TransactionHistoryList extends StatelessWidget {
 
 class LoopingForTransactionHistoryList extends StatelessWidget {
   LoopingForTransactionHistoryList({super.key});
-
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-        shrinkWrap: true,
-        physics: NeverScrollableScrollPhysics(),
-        itemCount: TransactionHistoryDate.length,
-        itemBuilder: (context, index) {
-          return TransactionHistoryList(
-            isActive: index == 0,
-            title: TransactionHistoryDate[index]['title'],
-            subtitle: TransactionHistoryDate[index]['subTitle'],
-            Amount: TransactionHistoryDate[index]['money'],
-          );
-        });
+    return Column(
+        children: TransactionHistoryDate.map((item) {
+      return TransactionHistoryList(
+        isActive: TransactionHistoryDate.indexOf(item) == 0,
+        title: item['title'],
+        subtitle: item['subTitle'],
+        Amount: item['money'],
+      );
+    }).toList());
   }
 }
+

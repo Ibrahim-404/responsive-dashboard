@@ -26,7 +26,7 @@ class QuickInvoice extends StatelessWidget {
               children: [
                 Text(
                   "Quick invoice",
-                  style: AppStyle.styleSemiBold16.copyWith(color: Colors.black),
+                  style: AppStyle.styleSemiBold16(context).copyWith(color: Colors.black),
                 ),
                 CircleAvatar(
                   radius: 15,
@@ -46,7 +46,7 @@ class QuickInvoice extends StatelessWidget {
               alignment: Alignment.centerLeft,
               child: Text(
                 'Latest Transaction',
-                style: AppStyle.styleMedium16,
+                style: AppStyle.styleMedium16(context),
 
               ),
             ),
@@ -79,11 +79,11 @@ class LatestTransactionInDetalse extends StatelessWidget {
           leading: SvgPicture.asset(picture),
           title: Text(
             title,
-            style: AppStyle.styleSemiBold16,
+            style: AppStyle.styleSemiBold16(context),
           ),
           subtitle: Text(
             subtitle,
-            style: AppStyle.styleRegular12,
+            style: AppStyle.styleRegular12(context),
           ),
         ),
       ),

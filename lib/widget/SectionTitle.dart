@@ -19,12 +19,12 @@ class _MyWidgetState extends State<SectionTitle> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Text(widget.title, style: AppStyle.styleSemiBold20),
+        Text(widget.title, style: AppStyle.styleSemiBold20(context)),
         DropdownButton<String>(
           borderRadius: BorderRadius.circular(20),
           padding: EdgeInsets.only(top: 10),
           elevation: 0,
-          style: AppStyle.styleMedium16,
+          style: AppStyle.styleMedium16(context),
           value: DropdownValue,
           icon: Icon(Icons.arrow_downward),
           items: (widget.ItemInDropDown != null && widget.ItemInDropDown!.isNotEmpty)

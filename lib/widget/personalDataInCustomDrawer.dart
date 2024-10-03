@@ -10,19 +10,24 @@ class personalDataInCustomDrawer extends StatelessWidget {
   final String Email;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Card(
+    return
+       Card(
         color: Color(0xFFFAFAFA),
         elevation: 0,
         child: ListTile(
           leading: SvgPicture.asset(Assets.Demo),
-          title: Text(
-            Name,
-            style: AppStyle.styleSemiBold16,
+          title: FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              Name,
+              style: AppStyle.styleSemiBold16(context),
+            ),
           ),
-          subtitle: Text(Email, style: AppStyle.styleRegular14.copyWith(color:Color(0xFFAAAAAA),),),
+          subtitle: FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(Email, style: AppStyle.styleRegular14(context).copyWith(color:Color(0xFFAAAAAA),),)),
         ),
-      ),
-    );
+      );
+
   }
 }
